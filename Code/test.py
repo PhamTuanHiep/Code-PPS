@@ -1,5 +1,6 @@
 import numpy as np
 import array as arr
+
 # A1= arr.array('d',[2,4])
 # A2 = arr.array('d',[5, -6])
 # a=np.array(A1)
@@ -42,24 +43,11 @@ import array as arr
 # print("\nMa trận sau khi mở rộng kích thước:")
 # print(matrix)
 
-import array as arr
 import pandas as pd
 
-# Input
-xlsxFile = pd.read_excel('../Data/OLS_test.xlsx',sheet_name="Sheet1", header=0)
-xlsxFile.rename(str.lower, axis='columns',inplace=1)
-X=xlsxFile['x']
-Y=xlsxFile['y']
-n= len(X) #stt
-# print("X=",type(X))
-# print("Y=",Y)
-# Y= np.transpose(Y)
-# print("Y=",Y)
+# Đọc dữ liệu từ file văn bản
+data = pd.read_csv('../Data/Mực nước biển trung bình.txt', delimiter='\t')  # Giả sử dữ liệu được phân tách bằng tab
 
-print("Y[2]=",Y[2:5])#2->4
-x0=5
-# index=X.index[X == x0].tolist()[0]
-# print(index)
+data.to_excel('data.xlsx', index=False)
 
-
-
+print(data)
