@@ -47,6 +47,6 @@ def P(y):
     return X[1]+t0*h
     
 y=0.8915
-print("P(",y,") = ",P(y))
+# print("P(",y,") = ",P(y))
 
     

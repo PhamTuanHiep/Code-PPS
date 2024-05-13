@@ -19,7 +19,11 @@ def SP(Y):
         for i in range(j,n):#hang
             Y[i,j]=Y[i,j-1]-Y[i-1,j-1]
     return Y
+
 print(SP(Y))
+
+
+
 def BS(y_k):
     nY=SP(Y)
     m=n+1
@@ -34,7 +38,7 @@ def BS(y_k):
         nY[i,j]=nY[i,j-1]-nY[i-1,j-1]
     return nY
 y_k=0.866
-print(BS(y_k))
+# print(BS(y_k))
     
 
 

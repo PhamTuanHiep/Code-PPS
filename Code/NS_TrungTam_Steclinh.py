@@ -18,7 +18,7 @@ Y2=xlsxFile2['y']
 
 
 
-def P(t,X,Y):
+def P_Steclinh(t,X,Y):
     N=len(X)
     n= int((N-1)/2) 
     dY= sp_up.SP(Y)
@@ -44,11 +44,10 @@ for l in range(1,10):
     t=l/10
     x=x0+t*h
     f=mt.sin(x*PI/180)
-    # f=1
-    p=P(t,X1,Y1)
+    p=P_Steclinh(t,X1,Y1)
     e=abs(f-p)
     ce=100*abs(e/f)
-    print("P(t= %2.1f)= %2.8f, x=%2.8f, f=%2.8f ; e= %2.8f, e%%= %2.8f"%(t,p,x,f,e,ce))
+    # print("P(t= %2.1f)= %2.8f, x=%2.8f, f=%2.8f ; e= %2.8f, e%%= %2.8f"%(t,p,x,f,e,ce))
 
 
 #f = x^4-2x^3+5x^2-x-9 /=/-------------------------------------------
@@ -60,7 +59,7 @@ for l in range(1,10):
 #     t=l/10
 #     x=x0+t*h
 #     f=pow(x,4)-2*pow(x,3)+5*pow(x,2)-x-9
-#     p=P(t,X2,Y2)
+#     p=P_Steclinh(t,X2,Y2)
 #     e=abs(f-p)
 #     ce=100*abs(e/f)
 #     print("P(t= %2.1f)= %2.8f, x=%2.8f, f=%2.8f ; e= %2.8f, e%%= %2.8f"%(t,p,x,f,e,ce))

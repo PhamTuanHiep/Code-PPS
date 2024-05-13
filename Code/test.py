@@ -42,12 +42,3 @@ import array as arr
 
 # print("\nMa trận sau khi mở rộng kích thước:")
 # print(matrix)
-
-import pandas as pd
-
-# Đọc dữ liệu từ file văn bản
-data = pd.read_csv('../Data/Mực nước biển trung bình.txt', delimiter='\t')  # Giả sử dữ liệu được phân tách bằng tab
-
-data.to_excel('data.xlsx', index=False)
-
-print(data)

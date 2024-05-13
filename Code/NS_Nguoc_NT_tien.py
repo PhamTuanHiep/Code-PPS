@@ -1,14 +1,15 @@
 import array as arr
 import math as mt
 import pandas as pd
+import numpy as np
 # X= arr.array('d',[2.651,2.778,2.905,3.032,3.159,3.286,3.413,3.54,3.667,3.794,3.921,4.048,4.175,4.302])
 # Y= arr.array('d',[2.93027,2.8834,2.64288,2.21651,1.62532,0.90269,0.09245,-0.75382,-1.5802,-2.33018,-2.95068,-3.339581,-3.63035,-3.63246])
 xlsxFile = pd.read_excel('../Data/OLS_test_Gamma.xlsx',sheet_name="Sheet1", header=0)
 xlsxFile.rename(str.lower, axis='columns',inplace=1)
 
 # print(xlsxFile)
-X=xlsxFile['nx']
-Y=xlsxFile['ny']
+X=np.copy(xlsxFile['x'])[7:12]
+Y=np.copy(xlsxFile['y'])[7:12]
 n=len(X)-1
 
 def Check(X):
@@ -48,7 +49,7 @@ def Check(X):
             print("t=",t0)
             return X[0]+t0*h
             
-        y=-3.15
+        y=0.8915
         print("P(",y,") = ",P(y))
     else: print("Day KHONG la bai toan Noi Suy moc cach deu")
 Check(X)  

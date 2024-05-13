@@ -7,11 +7,14 @@ import NS_NT_Tien as NS_NTT
 
 df1 = pd.read_csv('../Data/Mực nước biển trung bình.txt', delimiter='\t')  # Giả sử dữ liệu được phân tách bằng tab
 df1.to_excel('../Data/df1.xlsx', index=False)
-# df1=df1.sort_values('temp',ascending=True)
+
+df1=df1.sort_values('temp',ascending=True)
 
 df2 = pd.read_csv('../Data/Nhiệt độ trái đất.txt', delimiter='\t')  # Giả sử dữ liệu được phân tách bằng tab
 df2.to_excel('../Data/df2.xlsx', index=False)
 # df2=df2.sort_values('temp',ascending=True)
+t=np.copy(df2)
+print('df1:',t[1][1])
 
 n=len(df2['temp'])
 
@@ -23,7 +26,8 @@ n=len(df2['temp'])
 # new_df2=df2[( df2['temp'] >= min_df1_temp) & (df1['temp']<=max_df1_temp)]
 
 # print(new_df2)
-# print(df1)
+# print('df1:',df1)
+# print('df2:',df2)
 
 y=df1['sea_level']
 x=df1['temp']
@@ -31,10 +35,10 @@ x=df1['temp']
 xs=df2['temp']
 ys=arr.array('d',[])
 n=len(xs)
-print('xs:',xs)
-for i in range(0,n):
-    ys.append(NS_NTT.P(xs[i],x,y))
-print('ys:',ys)
+# print('xs:',xs)
+# for i in range(0,n):
+#     ys.append(NS_NTT.P(xs[i],x,y))
+# print('ys:',ys)
 
 # # nX=X1.values
 # nT1 = arr.array('d',[])
