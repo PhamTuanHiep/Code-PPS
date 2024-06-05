@@ -1,11 +1,14 @@
-import numpy as np
 import array as arr
-
+import math as mt
+import numpy as np
+import pandas as pd
+import sp_tg_tren as sp_up
+import matplotlib.pyplot as plt
 # A1= arr.array('d',[2,4])
 # A2 = arr.array('d',[5, -6])
 # a=np.array(A1)
 # b=a.transpose()
-# # print(b)
+# print(b)
 
 # A = np.array([[1,2,3],[-1,0,4],[2,5,-1]])
 # B = np.array([A1, A2])
@@ -42,3 +45,11 @@ import array as arr
 
 # print("\nMa trận sau khi mở rộng kích thước:")
 # print(matrix)
+X=[1,2,3,4]
+# del X[2]
+# print(X.pop(2))
+v1= np.array([1,2,3,4])
+v2=np.delete(v1,1)
+print(v2)
+print(v1+2*v1)
+
