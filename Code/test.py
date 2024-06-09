@@ -48,8 +48,41 @@ import matplotlib.pyplot as plt
 X=[1,2,3,4]
 # del X[2]
 # print(X.pop(2))
-v1= np.array([1,2,3,4])
-v2=np.delete(v1,1)
-print(v2)
-print(v1+2*v1)
 
+# v1= np.array([1,2,3,4])
+# v2=np.delete(v1,1)
+# v3= np.array([3,3,2,2])
+# print(v2)
+# print(v1+2*v1)
+
+# sqA=np.power(v1,v3)
+# print(sqA)
+# v3T=np.array([v3]).transpose()
+# print('v3T = ',v3T)
+
+matrix = np.array([[1, 2, 3],
+                   [4, 5, 6]])
+
+# Khai báo mảng cần ghép vào (phải có số phần tử bằng số hàng của ma trận)
+array = np.array([7, 8])
+# Chuyển đổi mảng thành dạng cột
+# array = array[:, np.newaxis]
+array=np.array([array]).transpose()
+array = np.power(array,2)
+# Ghép mảng vào ma trận theo cột
+result = np.hstack((matrix, array))
+
+print(result)
+
+# import numpy as np
+
+# # Khai báo mảng ban đầu
+# my_array = np.array([2, 3, 4, 5])
+
+# # Phần tử cần chèn
+# element = 1
+
+# # Chèn phần tử vào đầu mảng
+# new_array = np.insert(my_array, 0, element)
+
+# print(new_array)

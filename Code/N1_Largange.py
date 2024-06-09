@@ -65,12 +65,14 @@ Y1=np.copy(Y_func[0:5] )
 # #f = x^4-2x^3+5x^2-x-9 /=/-------------------------------------------
 x=3.5
 aP=P_Largange(X1,Y1)
+bac=len(X1)-1
+print("Cac so hang cua da thuc bac %2.0f la: "%(bac),aP)
 #neu la bac 3
-f=aP[0]*pow(x,3)+aP[1]*pow(x,2)+aP[2]*pow(x,1)+aP[3]
+# f=aP[0]*pow(x,3)+aP[1]*pow(x,2)+aP[2]*pow(x,1)+aP[3]
 #neu la bac 4
 f=aP[0]*pow(x,4)+aP[1]*pow(x,3)+aP[2]*pow(x,2)+aP[3]*x+aP[4]
 #neu la bac 5
-f=aP[0]*pow(x,5)+aP[1]*pow(x,4)+aP[2]*pow(x,3)+aP[3]*pow(x,2) +aP[4]*x + aP[5]
+# f=aP[0]*pow(x,5)+aP[1]*pow(x,4)+aP[2]*pow(x,3)+aP[3]*pow(x,2) +aP[4]*x + aP[5]
 
 p=P_Largange_Vl(x,X1,Y1)
 e=abs(f-p)
