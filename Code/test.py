@@ -45,22 +45,22 @@ import matplotlib.pyplot as plt
 
 # print("\nMa trận sau khi mở rộng kích thước:")
 # print(matrix)
-X=[1,2,3,4]
-# del X[2]
-# print(X.pop(2))
-B = np.zeros(4)
-v1= np.array([1,2,3,4])
-v2=np.delete(v1,1)
-v3= np.array([3,3,2,2])
-print("v2=",v2)
-print("B=",B)
+# X=[1,2,3,4]
+# # del X[2]
+# # print(X.pop(2))
+# B = np.zeros(4)
+# v1= np.array([1,2,3,4])
+# v2=np.delete(v1,1)
+# v3= np.array([3,3,2,2])
+# print("v2=",v2)
+# print("B=",B)
 
-print(v1+2*v1)
+# print(v1+2*v1)
 
-sqA=np.power(v1,v3)
-print(sqA)
-v3T=np.array([v3]).transpose()
-print('v3T = ',v3T)
+# sqA=np.power(v1,v3)
+# print(sqA)
+# v3T=np.array([v3]).transpose()
+# print('v3T = ',v3T)
 
 # matrix = np.array([[1, 2, 3],
 #                    [4, 5, 6]])
@@ -88,3 +88,17 @@ print('v3T = ',v3T)
 # new_array = np.insert(my_array, 0, element)
 
 # print(new_array)
+# from sympy import *
+# # init_printing(use_unicode=False, wrap_line=False)
+# a=0
+# b=1
+# x = Symbol('x')
+# f=pow(x,2) + x + 1
+# f=f+x
+# print(f)
+# print(integrate(f, x))
+# print(integrate(f, (x, a, b)))
+
+vector = np.arange(1, 10)
+
+print(vector)

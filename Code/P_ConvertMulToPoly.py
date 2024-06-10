@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 import sp_tg_tren as sp_up
 import matplotlib.pyplot as plt
+from sympy import *
 
 def mP(X):
     n=len(X)
@@ -81,6 +82,7 @@ def mP(X):
     # A.extend(add)
     # A += add
     # print("A=",A)
+    
     return A
 # X=[1,2,3,4]
 # X=[1,1,1,1,1,1,1,1,1,1]
@@ -91,3 +93,18 @@ def mP(X):
 # f0=(x-1)*(x-2)*(x-3)*(x-4)
 # f1=mt.pow(x,4)-10*mt.pow(x,3)+35*mt.pow(x,2)-50*x+24
 # print('f0=%f, f1=%f'%(f0,f1))
+
+# ham symbol
+def F(X,name):
+    x = Symbol(name)
+    f=0
+    A=mP(X)
+    n=len(A)
+    for i in range(0,n):
+        f= f+A[i]*pow(x,n-1-i)
+    return f
+# print(F(X,"x"))
+# tq = Symbol('t')
+# print(integrate(F(X,'t'), tq))
+
+# M = np.zeros((n, n))

@@ -43,3 +43,9 @@ Y1=Y1[7:10]
 Xác định đa thức theo biến t và đạo hàm đa thức -> tính giá trị đạo hàm đó
 Input: t,h,X,Y
 output: mảng hệ số ứng với số mũ giảm dần của biến t ( từ trái -> phải)
+
+# Tính tích phân
+1. Tính tính phân bằng pp Newton Cotet (N7_TichPhan_NTCT.py)
+function H(n) tính vecto H chứa các Hi ,với i=0,1,...,n ứng với số mốc
+function I(Y,a,b) tính giá trị tích phân của tích phân xác định hàm y(x) từ a -> b
+
