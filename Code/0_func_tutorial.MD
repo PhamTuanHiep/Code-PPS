@@ -40,12 +40,19 @@ Y1=Y1[7:10]
 <!--  -->
 
 #Tinh dao ham (N6_DaoHam.py)
-Xác định đa thức theo biến t và đạo hàm đa thức -> tính giá trị đạo hàm đó
-Input: t,h,X,Y
-output: mảng hệ số ứng với số mũ giảm dần của biến t ( từ trái -> phải)
+
+- Xác định đa thức theo biến t và đạo hàm đa thức -> tính giá trị đạo hàm đó
+- Input: t,h,X,Y
+- Output: mảng hệ số ứng với số mũ giảm dần của biến t ( từ trái -> phải)
 
 # Tính tích phân
-1. Tính tính phân bằng pp Newton Cotet (N7_TichPhan_NTCT.py)
-function H(n) tính vecto H chứa các Hi ,với i=0,1,...,n ứng với số mốc
-function I(Y,a,b) tính giá trị tích phân của tích phân xác định hàm y(x) từ a -> b
 
+1. Tính tính phân bằng pp Newton Cotet (N7_TichPhan_NTCT.py)
+   function H(n) tính vecto H chứa các Hi ,với i=0,1,...,n ứng với số mốc
+   function I(Y,a,b) tính giá trị tích phân của tích phân xác định hàm y(x) từ a -> b
+   <!-- 2+3 trong N7_TichPhan_HinhThang_XimSon.py -->
+2. Tính tích phân bằng pp Hình thang ( số mốc là chẵn, min mốc là 2, n=1 ở pp Cotet)
+   function HT(Y,h) với Y là vecto giá trị y , h là khoảng cách nghiệm
+
+3. Tính tích phân bằng pp XimSonXí ( số mốc là lẻ, min mốc là 3, n=2 ở pp Cotet)
+   function XimSon(Y,h) với Y là vecto giá trị y , h là khoảng cách nghiệm
