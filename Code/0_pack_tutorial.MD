@@ -1,8 +1,9 @@
-1. P_ConvertMulToPoly
+1. P_ConvertMulToPoly, bac max =10
    Chua ham mP(X) bien doi nhan tu thanh da thuc
-   return: array('d', [1.0, -10.0, 35.0, -50.0, 24.0, 0.0])
-   Tu phai -> trai la bac mu x tang dan (x^0 -> x^n) : tinh tu so khac 0 dau tien
-
+   X chứa các nghiệm của biểu thức (x-x0)...(x-xn) = 0
+   return: array('d', [1.0, -10.0, 35.0, -50.0, 24.0])
+   Từ phải -> tría bậc mũ tăng dần (x^0 -> x^n)
+Hay từ trái -> phài là bậc mũ giảm dần
 <!-- ///////////////////// -->
 
 2. sp_tg_tren
