@@ -106,18 +106,20 @@ import sympy as sp
 from scipy.optimize import minimize_scalar
 
 # Khai báo biến
-x = sp.symbols('x')
+import sympy as sp
 
-# Biểu thức của hàm
-F = x**2 - 3*x + 2
-F=sp.Abs(F)
-print(F)
-# Chuyển biểu thức thành hàm số để sử dụng trong minimize_scalar
-f = sp.lambdify(x, F)
+# Khai báo hai biến
+x, y = sp.symbols('x y')
 
-# Tìm giá trị nhỏ nhất trên đoạn [a, b]
-a = 0
-b = 2
-result = minimize_scalar(f, bounds=(a, b), method='bounded')
+# Khởi tạo hàm biểu thức với hai biến
+expression = x**2 + y**2 + 3*x*y
 
-print("Giá trị nhỏ nhất của hàm trên đoạn [", a, ",", b, "] là:", result.fun)
+# Tính giá trị của hàm với các giá trị của hai biến
+x_value = 2
+y_value = 3
+result = expression.subs({x: x_value, y: y_value})
+print("Giá trị của hàm với x =", x_value, "và y =", y_value, "là:", result)
+n=2
+m=3
+M = np.zeros((m, n))
+print(M)
