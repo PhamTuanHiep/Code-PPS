@@ -53,6 +53,18 @@ Y1=Y1[7:10]
    <!-- 2+3 trong N7_TichPhan_HinhThang_XimSon.py -->
 2. Tính tích phân bằng pp Hình thang ( số mốc là chẵn, min mốc là 2, n=1 ở pp Cotet)
    function HT(Y,h) với Y là vecto giá trị y , h là khoảng cách nghiệm
-
+	Lưu ý: pp HT khi cho giá trị 2 đầu tích phân là a,b thì chia đoạn thành n phần bằng nhau (ứng với n+1 mốc, x0=a,xn = b) khi đó h = (b-a)/n
 3. Tính tích phân bằng pp XimSonXí ( số mốc là lẻ, min mốc là 3, n=2 ở pp Cotet)
    function XimSon(Y,h) với Y là vecto giá trị y , h là khoảng cách nghiệm
+   Lưu ý: pp XimSon khi cho giá trị 2 đầu tích phân là a,b thì chia đoạn thành 2m phần bằng nhau (ứng với 2m+1 mốc, x0=a,x2m = b) khi đó h = (b-a)/(2m) 
+ 3.1. Tính sai số XimSon
+ - function Er_XS(F,a,b,name,h): 
+ 	+ F là dạng symbol
+ 	+ a,b là 2 đầu mốc tích phân
+ 	+ name là tên biến
+ 	+ h là khoảng cách nghiệm đã tính theo ct: h=(b-a)/(2*m)a
+ - Khi làm bài có yêu cầu về sai số thì ta phải xác định 4 điều trc khi run:
+ 	+ Kiểm tra xem hàm nhập đúng chưa ?
+ 	+ Chọn m
+ 	+ Xác định các mốc của x trong excel theo m
+ 	+ Rút ra mảng x trong code để run 

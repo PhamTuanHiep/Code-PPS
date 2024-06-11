@@ -1,26 +1,13 @@
 import array as arr
-import math as mt
 import numpy as np
 import pandas as pd
-import sp_tg_tren as sp_up
 import GiaiThua as GT
 import P_ConvertMulToPoly as Cv_M_P
-PI=mt.pi
-
-xlsxFile1 = pd.read_excel('../Data/ham_luong_giac.xlsx',sheet_name="Sheet1", header=0)
-xlsxFile1.rename(str.lower, axis='columns',inplace=1)
-X_sin=xlsxFile1['x']
-Y_sin=xlsxFile1['y']
-
-xlsxFile2 = pd.read_excel('../Data/ham_da_thuc.xlsx',sheet_name="Sheet1", header=0)
-xlsxFile2.rename(str.lower, axis='columns',inplace=1)
-X_func=xlsxFile2['x']
-Y_func=xlsxFile2['y']
 
 xlsxFile2 = pd.read_excel('../Data/Test_DaoHam.xlsx',sheet_name="Sheet1", header=0)
 xlsxFile2.rename(str.lower, axis='columns',inplace=1)
 X_test=xlsxFile2['x']
-Y_test=xlsxFile2['ny']
+Y_test=xlsxFile2['y']
 
 def DaoHamValue(t,h,X,Y):
     N=len(X)
@@ -48,10 +35,10 @@ def DaoHamValue(t,h,X,Y):
     print("he so cua da thuc t sau dao ham la \n",C)
     return P/h
 
-t=3
-h=1
-X=X_test[0:4]
-Y=Y_test[0:4]
+t=1
+h=0.02
+X=X_test[0:3]
+Y=Y_test[0:3]
 
 P= DaoHamValue(t,h,X,Y)
 print(P)

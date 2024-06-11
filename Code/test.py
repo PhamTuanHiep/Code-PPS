@@ -99,6 +99,25 @@ import matplotlib.pyplot as plt
 # print(integrate(f, x))
 # print(integrate(f, (x, a, b)))
 
-vector = np.arange(1, 10)
+# vector = np.arange(1, 10)
+# print(vector)
 
-print(vector)
+import sympy as sp
+from scipy.optimize import minimize_scalar
+
+# Khai báo biến
+x = sp.symbols('x')
+
+# Biểu thức của hàm
+F = x**2 - 3*x + 2
+F=sp.Abs(F)
+print(F)
+# Chuyển biểu thức thành hàm số để sử dụng trong minimize_scalar
+f = sp.lambdify(x, F)
+
+# Tìm giá trị nhỏ nhất trên đoạn [a, b]
+a = 0
+b = 2
+result = minimize_scalar(f, bounds=(a, b), method='bounded')
+
+print("Giá trị nhỏ nhất của hàm trên đoạn [", a, ",", b, "] là:", result.fun)

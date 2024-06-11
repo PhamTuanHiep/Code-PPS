@@ -4,18 +4,15 @@ import numpy as np
 import pandas as pd
 import sp_tg_tren as sp_up
 import matplotlib.pyplot as plt
-from sympy import *
+import sympy as sp
+from scipy.optimize import minimize_scalar
 
+# Hệ số da thức ----------------------------------------------------------------------------
 def mP(X):
     n=len(X)
     # A = arr.array('d',[1])
     
-    a1=0#b1
-    a2=0#b2
-    a3=0#b3
-    a4=0
-    a5=0#b5
-    a6=a7=a8=a9=a10=0
+    a1=a2=a3=a4=a5=a6=a7=a8=a9=a10=0
     A= arr.array('d',[])
 
     for i in range(0,n):
@@ -94,17 +91,72 @@ def mP(X):
 # f1=mt.pow(x,4)-10*mt.pow(x,3)+35*mt.pow(x,2)-50*x+24
 # print('f0=%f, f1=%f'%(f0,f1))
 
-# ham symbol
+# ham symbol ---------------------------------------------------------------
 def F(X,name):
-    x = Symbol(name)
+    x = sp.symbols(name)
     f=0
     A=mP(X)
     n=len(A)
     for i in range(0,n):
         f= f+A[i]*pow(x,n-1-i)
     return f
-# print(F(X,"x"))
-# tq = Symbol('t')
-# print(integrate(F(X,'t'), tq))
 
-# M = np.zeros((n, n))
+# X=[1,1,1,1,1,1,1,1,1,1]
+# print(F(X,"x"))
+# tq = sp.symbols('t')
+# print(sp.integrate(F(X,'t'), tq))
+# print(sp.diff(F(X,'t'), tq))
+
+
+
+#Đạo hàm da rhuc f theo data bậc cập n ------------------------------------------------------------------
+def DH_dt(X,n,name):
+    x = sp.symbols(name)
+    f=F(X,name)
+    f = sp.diff(f, x,n)
+    return f
+
+# X=[1,1,1,1,1,1,1,1,1,1]
+# n=1
+# name="x"
+# print(DH_dt(X,n,name))
+
+#Đạo hàm hàm symbol bất kì bậc cập n ------------------------------------------------------------------
+def DH_F(F,n,name):
+    x = sp.symbols(name)
+    f = sp.diff(F, x,n)
+    return f
+#Nguyên hàm bậc cập n ------------------------------------------------------------------------
+def NH(X,n,name):
+    x = sp.symbols(name)
+    f=F(X,name)
+    f = sp.integrate(f,x,n)
+    return f
+
+# X=[1,1,1,1,1,1,1,1,1,1]
+# n=2
+# name="x"
+# f=NH(X,n,name)
+# print(f)
+# # tính gia trị hàm symbol
+# x = sp.symbols('x')
+# x_value = 0
+# result = f.subs(x, x_value)
+# print("Giá trị của hàm tại x =", x_value, "là:", result)
+
+# Tìm max,min của hàm |symbol| trên 1 đoạn -----------------------------------------------------
+def Max_Min_F(F,a,b,name):
+    x = sp.symbols(name)
+    f = sp.lambdify(x, sp.Abs(F))
+    max = - minimize_scalar(lambda x: -f(x), bounds=(a, b), method='bounded').fun
+    min= minimize_scalar(f, bounds=(a, b), method='bounded').fun
+    V=np.array([max,min])
+    return V
+
+# a=0
+# b=2
+# name='x'
+# x= sp.symbols(name)
+# F=24/(1+pow(x,5))
+# mm=Max_Min_F(F,a,b,name)
+# print("Giá trị lớn nhất/nhỏ nhất của hàm trên đoạn [", a, ",", b, "] là:", mm)
