@@ -12,10 +12,12 @@ xlsxFile1.rename(str.lower, axis='columns',inplace=1)
 X_sin=xlsxFile1['x']
 Y_sin=xlsxFile1['y']
 
-xlsxFile2 = pd.read_excel('../Data/ham_da_thuc.xlsx',sheet_name="Sheet1", header=0)
+xlsxFile2 = pd.read_excel('../Data/de1CK20232PPS.xlsx',sheet_name="Sheet1", header=0)
+
+# xlsxFile2 = pd.read_excel('../Data/ham_da_thuc.xlsx',sheet_name="Sheet1", header=0)
 xlsxFile2.rename(str.lower, axis='columns',inplace=1)
-X_func=xlsxFile2['lx']
-Y_func=xlsxFile2['ly']
+X_func=xlsxFile2['x']
+Y_func=xlsxFile2['y']
 
 
 def P_Largange_Vl(x,X,Y):
@@ -60,10 +62,10 @@ def P_Largange(X,Y):
         Arr+=A[j]*Cv_M_P.mP(X_cp)
     # print("Arr",Arr)
     return Arr
-X1=np.copy(X_func[0:5] )#index =  7->10->stt: 6-9
-Y1=np.copy(Y_func[0:5] )
+X1=np.copy(X_func[0:65] )#index =  7->10->stt: 6-9
+Y1=np.copy(Y_func[0:65] )
 # #f = x^4-2x^3+5x^2-x-9 /=/-------------------------------------------
-x=3.5
+x=4.35
 aP=P_Largange(X1,Y1)
 bac=len(X1)-1
 print("Cac so hang cua da thuc bac %2.0f la: "%(bac),aP)

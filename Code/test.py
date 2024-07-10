@@ -45,14 +45,16 @@ import matplotlib.pyplot as plt
 
 # print("\nMa trận sau khi mở rộng kích thước:")
 # print(matrix)
-X=[1,2,3,4]
-# del X[2]
-# print(X.pop(2))
-
+# X=[1,2,3,4]
+# # del X[2]
+# # print(X.pop(2))
+# B = np.zeros(4)
 # v1= np.array([1,2,3,4])
 # v2=np.delete(v1,1)
 # v3= np.array([3,3,2,2])
-# print(v2)
+# print("v2=",v2)
+# print("B=",B)
+
 # print(v1+2*v1)
 
 # sqA=np.power(v1,v3)
@@ -60,19 +62,19 @@ X=[1,2,3,4]
 # v3T=np.array([v3]).transpose()
 # print('v3T = ',v3T)
 
-matrix = np.array([[1, 2, 3],
-                   [4, 5, 6]])
+# matrix = np.array([[1, 2, 3],
+#                    [4, 5, 6]])
 
-# Khai báo mảng cần ghép vào (phải có số phần tử bằng số hàng của ma trận)
-array = np.array([7, 8])
-# Chuyển đổi mảng thành dạng cột
-# array = array[:, np.newaxis]
-array=np.array([array]).transpose()
-array = np.power(array,2)
-# Ghép mảng vào ma trận theo cột
-result = np.hstack((matrix, array))
+# # Khai báo mảng cần ghép vào (phải có số phần tử bằng số hàng của ma trận)
+# array = np.array([7, 8])
+# # Chuyển đổi mảng thành dạng cột
+# # array = array[:, np.newaxis]
+# array=np.array([array]).transpose()
+# array = np.power(array,2)
+# # Ghép mảng vào ma trận theo cột
+# result = np.hstack((matrix, array))
 
-print(result)
+# print(result)
 
 # import numpy as np
 
@@ -86,3 +88,71 @@ print(result)
 # new_array = np.insert(my_array, 0, element)
 
 # print(new_array)
+# from sympy import *
+# # init_printing(use_unicode=False, wrap_line=False)
+# a=0
+# b=1
+# x = Symbol('x')
+# f=pow(x,2) + x + 1
+# f=f+x
+# print(f)
+# print(integrate(f, x))
+# print(integrate(f, (x, a, b)))
+
+# vector = np.arange(1, 10)
+# print(vector)
+
+# import sympy as sp
+# from scipy.optimize import minimize_scalar
+
+# # Khai báo biến
+# import sympy as sp
+
+# # Khai báo hai biến
+# x, y = sp.symbols('x y')
+
+# # Khởi tạo hàm biểu thức với hai biến
+# expression = x**2 + y**2 + 3*x*y
+
+# # Tính giá trị của hàm với các giá trị của hai biến
+# x_value = 2
+# y_value = 3
+# result = expression.subs({x: x_value, y: y_value})
+# print("Giá trị của hàm với x =", x_value, "và y =", y_value, "là:", result)
+# n=2
+# m=3
+# M = np.zeros((m, n))
+# print(M)
+
+
+# Tạo ma trận
+# matrix = np.array([[1, 2, 3],
+#                    [4, 5, 6],
+#                    [7, 8, 9]])
+
+# # Tính tổng các cột
+# column_sums = np.sum(matrix, axis=0)
+# print("Tổng các cột:", column_sums)
+
+# matrix = np.array([[1, 2, 3],
+#                    [4, 5, 6],
+#                    [7, 8, 9]])
+
+# vector = np.array([1, 2, 3])
+
+# # Nhân ma trận với vector
+# result = np.dot(matrix.transpose(), vector)
+# print("Kết quả của phép nhân ma trận với vector:", result)
+
+import sympy as sp
+
+# Định nghĩa các biến
+x, y = sp.symbols('x y')
+
+# Định nghĩa phương trình
+equation = x**2 + y- 4
+
+# Giải phương trình để tìm y
+solutions = sp.solve(equation, y)
+print(f"Công thức của y là:", solutions)
+print(48/10)
